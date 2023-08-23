@@ -1,18 +1,15 @@
 //344. Reverse String
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    string s;
-    cin>>s;
-    int quq=0,q=0,a=0;
-    for(int i=0;i<s.size();i++){
-            if(s[i] =='Q'){q++; quq+=a;}
-            else if(s[i] =='A'){a+=q;}
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+    int left = 0;
+    int right = s.size() - 1;
+    
+    while (left < right) {
+        swap(s[left], s[right]);
+        left++;
+        right--;
     }
-
-    cout<<quq;
-    return 0;
 }
+
+};

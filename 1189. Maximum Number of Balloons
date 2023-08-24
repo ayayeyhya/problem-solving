@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int maxNumberOfBalloons(const std::string& text) {
+   map<char,int>mp;
+   for(int i=0;i<text.length();i++){
+       if(text[i]=='b' ||text[i]=='a' ||text[i]=='l' ||text[i]=='o' ||text[i]=='n' ){   mp[text[i]]++;   }
+   }
+   return min(mp['b'],min(mp['a'],min(mp['l']/2,min(mp['o']/2,mp['n']))));
+}
+};

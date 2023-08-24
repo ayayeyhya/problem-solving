@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+       int n = nums.size();
+
+       // Create a set of all the numbers in the array.
+       set<int> seen;
+       for (int i = 0; i < n; i++) {
+           seen.insert(nums[i]);
+       }
+
+       // Iterate over the numbers from 1 to n.
+       vector<int> res;
+       for (int i = 1; i <= n; i++) {
+           // If the number i is not in the set, then it is missing.
+           if (seen.find(i) == seen.end()) {
+               res.push_back(i);
+           }
+       }
+
+       return res;
+    }
+};
